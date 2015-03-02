@@ -20,7 +20,7 @@ class BuildCorpus(object):
         self.postagged_data = dict()
         self.sentence_data = dict()
         self.corpus = None
-        #self.build_postagged_data()
+        self.build_postagged_data()
         self.build_sentence_data()
 
     def build_postagged_data(self,directory='./postagged-files'):
