@@ -9,7 +9,7 @@ class FeatureExtraction(object):
         self.corpus = corpus
         self.feat = []
         self.data= None
-
+        self.weka_attr = []
     def extract(self,dataset):
         ffunc_list = get_feature_functions()
         for index,line in enumerate(dataset.data):
@@ -44,21 +44,23 @@ class FeatureExtraction(object):
             if key == 'label':
                 label = value
                 continue
+            if key not in self.weka_attr: self.weka_attr.append(key)
             result += str(value) + ', '
         return result + label
 """
 @RELATION coref_train
 
 @ATTRIBUTE distance	numeric
+@ATTRIBUTE both_pronoun	{0,1,2}
 @ATTRIBUTE demonstrative	{True,False}
 @ATTRIBUTE definite	{True,False}
 @ATTRIBUTE sub_str	{True,False}
-@ATTRIBUTE str_match	{True,False}
-@ATTRIBUTE prp_str_match	{True,False}
 @ATTRIBUTE ne_match	{True,False}
-@ATTRIBUTE pronoun_1	{True,False}
-@ATTRIBUTE pronoun_2	{True,False}
+@ATTRIBUTE str_match	{True,False}
 @ATTRIBUTE capital_i_j	{0,1,2}
+@ATTRIBUTE prp_str_match	{True,False}
+@ATTRIBUTE pronoun_2	{True,False}
+@ATTRIBUTE pronoun_1	{True,False}
 @ATTRIBUTE class 	{yes, no}
 
 @DATA
@@ -68,7 +70,7 @@ if __name__=='__main__':
     f_ex.extract(DataSet(r"./project2/data/coref-trainset.gold"))
     f_ex.output_feat(r"coref-trainset.gold.fv.txt",f_ex.mallet_output)
     f_ex.output_feat(r"weka-trainset.arff",f_ex.weka_output)
-
+    print f_ex.weka_attr
     f_ex=FeatureExtraction(BuildCorpus())
     f_ex.extract(DataSet(r"./project2/data/coref-testset.gold"))
     f_ex.output_feat(r"coref-testset.gold.fv.txt",f_ex.mallet_output)

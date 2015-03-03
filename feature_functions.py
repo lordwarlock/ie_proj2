@@ -1,7 +1,7 @@
 import re
 
 def get_feature_functions():
-    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun]
 
 
 #pronons = ['i', ]
@@ -67,3 +67,5 @@ def capital_i_j(structure,corpus):
         result -= 1
     return result
 
+def both_pronoun(structure,corpus):
+    return pronoun_1(structure,corpus) + pronoun_2(structure,corpus)
