@@ -54,6 +54,8 @@ class FeatureExtraction(object):
 @ATTRIBUTE definite	{True,False}
 @ATTRIBUTE sub_str	{True,False}
 @ATTRIBUTE str_match	{True,False}
+@ATTRIBUTE prp_str_match	{True,False}
+@ATTRIBUTE ne_match	{True,False}
 @ATTRIBUTE class 	{yes, no}
 
 @DATA
@@ -63,3 +65,8 @@ if __name__=='__main__':
     f_ex.extract(DataSet(r"./project2/data/coref-trainset.gold"))
     f_ex.output_feat(r"coref-trainset.gold.fv.txt",f_ex.mallet_output)
     f_ex.output_feat(r"weka-trainset.arff",f_ex.weka_output)
+
+    f_ex=FeatureExtraction(BuildCorpus())
+    f_ex.extract(DataSet(r"./project2/data/coref-testset.gold"))
+    f_ex.output_feat(r"coref-testset.gold.fv.txt",f_ex.mallet_output)
+    f_ex.output_feat(r"weka-testset.arff",f_ex.weka_output)

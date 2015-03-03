@@ -25,7 +25,7 @@ class Coref(object):
             list=list[:-1]
         else:
             self.label=None
-        self.document=list[0]
+        self.document=list[0][:-11]
         self.first = Markable()
         self.second = Markable()
         self.first.sent, self.first.start, self.first.end, self.first.ne, self.first.word = list[1:6]

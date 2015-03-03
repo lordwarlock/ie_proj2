@@ -1,7 +1,7 @@
 import re
 
 def get_feature_functions():
-    return [distance,definite,demonstrative,str_match,sub_str]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match]
 
 
 #pronons = ['i', ]
@@ -33,9 +33,16 @@ def pro_str_match(structure,corpus):
     document = structure.document
     first = structure.first
     second = structure.second
-    Postag_first = corpus.postagged_data[document][first.sent][first.start:first.end]
-    Postag_second = corpus.postagged_data[document][second.sent][second.start:second.end]
-    if Postag_first.endswith('_PRP') and Postag_second.endswith('_PRP') and first.word == second.word:
+    Postag_first = corpus.postagged_data[document][first.sent].tokens[first.start:first.end]
+    Postag_second = corpus.postagged_data[document][second.sent].tokens[second.start:second.end]
+    if Postag_first[0][1] == 'PRP' and Postag_second[0][1] == 'PRP' and first.word == second.word:
+        #print first.word
+        return True
+    else:
+        return False
+
+def ne_match(structure,corpus):
+    if (structure.first.ne == structure.second.ne):
         return True
     else:
         return False
