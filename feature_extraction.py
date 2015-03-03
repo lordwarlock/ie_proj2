@@ -56,6 +56,9 @@ class FeatureExtraction(object):
 @ATTRIBUTE str_match	{True,False}
 @ATTRIBUTE prp_str_match	{True,False}
 @ATTRIBUTE ne_match	{True,False}
+@ATTRIBUTE pronoun_1	{True,False}
+@ATTRIBUTE pronoun_2	{True,False}
+@ATTRIBUTE capital_i_j	{0,1,2}
 @ATTRIBUTE class 	{yes, no}
 
 @DATA

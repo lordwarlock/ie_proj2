@@ -1,7 +1,7 @@
 import re
 
 def get_feature_functions():
-    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j]
 
 
 #pronons = ['i', ]
@@ -46,3 +46,24 @@ def ne_match(structure,corpus):
         return True
     else:
         return False
+
+def pronoun_1(structure,corpus):
+    document = structure.document
+    first = structure.first
+    second = structure.second
+    return corpus.postagged_data[document][first.sent].tokens[first.start:first.end][0][1]=='PRP'
+
+def pronoun_2(structure,corpus):
+    document = structure.document
+    first = structure.first
+    second = structure.second
+    return corpus.postagged_data[document][second.sent].tokens[second.start:second.end][0][1]=='PRP'
+
+def capital_i_j(structure,corpus):
+    result = 2
+    if (structure.first.word == structure.first.word.lower()):
+        result -= 1
+    if (structure.second.word == structure.second.word.lower()):
+        result -= 1
+    return result
+
