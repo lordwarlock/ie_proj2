@@ -1,7 +1,7 @@
 from feature_functions import get_feature_functions
 from data_reader import *
 from build_corpus import BuildCorpus
-from gender_detector import gender_detector
+#from gender_detector import gender_detector
 
 
 class FeatureExtraction(object):
@@ -37,8 +37,29 @@ class FeatureExtraction(object):
                 
                 output_file.write(linefunc(line) + '\n')
 
-     
+    def weka_output(self,line):
+        label = None
+        result = ''
+        for key,value in line.iteritems():
+            if key == 'label':
+                label = value
+                continue
+            result += str(value) + ', '
+        return result + label
+"""
+@RELATION coref_train
+
+@ATTRIBUTE distance	numeric
+@ATTRIBUTE demonstrative	{True,False}
+@ATTRIBUTE definite	{True,False}
+@ATTRIBUTE sub_str	{True,False}
+@ATTRIBUTE str_match	{True,False}
+@ATTRIBUTE class 	{yes, no}
+
+@DATA
+"""
 if __name__=='__main__':
     f_ex=FeatureExtraction(BuildCorpus())
-    f_ex.extract(DataSet(r".\project2\data\coref-trainset.gold"))
+    f_ex.extract(DataSet(r"./project2/data/coref-trainset.gold"))
     f_ex.output_feat(r"coref-trainset.gold.fv.txt",f_ex.mallet_output)
+    f_ex.output_feat(r"weka-trainset.arff",f_ex.weka_output)
