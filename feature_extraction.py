@@ -57,12 +57,14 @@ class FeatureExtraction(object):
 @RELATION coref_train
 
 @ATTRIBUTE distance	numeric
+@ATTRIBUTE gender_agree	{True,False,None}
 @ATTRIBUTE both_pronoun	{0,1,2}
 @ATTRIBUTE demonstrative	{True,False}
 @ATTRIBUTE definite	{True,False}
 @ATTRIBUTE sub_str	{True,False}
 @ATTRIBUTE ne_match	{True,False}
 @ATTRIBUTE str_match	{True,False}
+@ATTRIBUTE number_agree	{True,False,None}
 @ATTRIBUTE capital_i_j	{0,1,2}
 @ATTRIBUTE prp_str_match	{True,False}
 @ATTRIBUTE pronoun_2	{True,False}

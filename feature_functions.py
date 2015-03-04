@@ -2,7 +2,7 @@ import re
 import inflect
 import gender_detector as gd
 def get_feature_functions():
-    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree]
 
 
 #pronons = ['i', ]
@@ -111,6 +111,11 @@ def gender(ne,str,words):
         elif str.lower() in ['hers','her','she']:
             return 'female'
         else:
+            special_char_match = re.match('[a-zA-Z]+',words[0][0])
+            if (special_char_match):
+                if (special_char_match.group(0) != words[0][0]): return None
+            else:
+                return None
             guess = detector.guess(words[0][0])
             if guess == None and len(words) > 1:
                 guess = detector.guess(words[-1][0])

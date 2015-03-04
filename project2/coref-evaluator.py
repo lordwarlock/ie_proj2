@@ -30,7 +30,7 @@ for tline in testfh.readlines():
     if not emptyline_pattern.match(tline):
         parts = tline.split()
         #print parts
-        test_tag_list.append(parts[-1])
+        test_tag_list.append(parts[0])
 
 test_total = 0
 gold_total = 0
