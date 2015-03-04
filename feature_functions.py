@@ -1,5 +1,6 @@
 import re
-
+import inflect
+import gender_detector as gd
 def get_feature_functions():
     return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun]
 
@@ -69,3 +70,68 @@ def capital_i_j(structure,corpus):
 
 def both_pronoun(structure,corpus):
     return pronoun_1(structure,corpus) + pronoun_2(structure,corpus)
+
+def gender_agree(coref,corpus):
+    g1=gender(coref.first.ne,coref.first.word,getslice(coref,corpus,1))
+    g2=gender(coref.second.ne,coref.second.word,getslice(coref,corpus,2))
+    if g1 == g2 and g1 != None:
+        return True
+    elif g1 == g2 and g1 == None:
+        return None
+    else:
+        return False
+
+def getslice(coref,corpus,num):
+    markable= coref.first if num == 1 else coref.second
+    return corpus.postagged_data[coref.document][markable.sent].tokens[markable.start:markable.end]
+
+def number_agree(coref,corpus):
+    n1 = number(coref.first.word,getslice(coref,corpus,1)) 
+    n2 = number(coref.second.word,getslice(coref,corpus,2))
+    #print n1,n2
+    return n1 == n2
+
+num_detect=inflect.engine()
+def number(str,words):
+    if len(words) == 1:
+        pos = words[0][1][0]
+        if pos=='N':
+            return not num_detect.singular_noun(words[0][0]) == words[0][0]
+        else:
+            return num_detect.plural_adj(words[0][0]) == words[0][0]
+    else:
+        return num_detect.plural(str.replace('_',' ')) == str.replace('_',' ')
+    
+
+detector=gd.GenderDetector(unknown_value=None)
+def gender(ne,str,words):
+    if ne == 'PER':
+        if str.lower() in ['his','him','he']:
+            return 'male'
+        elif str.lower() in ['hers','her','she']:
+            return 'female'
+        else:
+            guess = detector.guess(words[0][0])
+            if guess == None and len(words) > 1:
+                guess = detector.guess(words[-1][0])
+        return guess
+    else:
+        return None
+
+def alias(coref,corpus):
+    w1=getslice(coref,corpus,1)
+    w2=getslice(coref,corpus,2)
+    w1=min(w1,w2,key=len)
+    w2=max(w1,w2,key=len)
+    if len(w1) == 1:
+        acronym=''.join([w[0][0] for w in w2])
+        if acronym == w1[0]:
+            return True
+    return False
+
+if __name__ == '__main__':
+    from data_reader import *
+    from feature_extraction import FeatureExtraction
+    from build_corpus import BuildCorpus
+    f_ex=FeatureExtraction(BuildCorpus())
+    f_ex.test(DataSet(r"./project2/data/coref-trainset.gold"),number_agree)

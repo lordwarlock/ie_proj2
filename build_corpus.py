@@ -21,13 +21,14 @@ class BuildCorpus(object):
         self.sentence_data = dict()
         self.corpus = None
         self.build_postagged_data()
-        self.build_sentence_data()
+        #self.build_sentence_data()
 
     def build_postagged_data(self,directory='./postagged-files'):
         pos_files = glob.glob(directory+'/*.pos')
+        regex=re.compile(r'.*[/|\\](.*?)\.head\.coref\.raw\.pos')
         for pos_file in pos_files:
             with open(pos_file,'r') as f_pos:
-                match = re.match('.*/(.*?)\.head\.coref\.raw\.pos',pos_file)
+                match = regex.match(pos_file)
                 data_name = match.group(1)
                 lines = []
                 for line in f_pos:

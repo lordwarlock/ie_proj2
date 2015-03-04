@@ -10,6 +10,12 @@ class FeatureExtraction(object):
         self.feat = []
         self.data= None
         self.weka_attr = []
+
+    def test(self,dataset,feature):
+        ffunc_list = get_feature_functions()
+        for index,line in enumerate(dataset.data):
+            print line.label,line.first.word,line.first.ne,line.second.word,line.second.ne,feature(line,self.corpus)
+
     def extract(self,dataset):
         ffunc_list = get_feature_functions()
         for index,line in enumerate(dataset.data):
