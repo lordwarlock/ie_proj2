@@ -21,8 +21,8 @@ class GetSentences(object):
             with open(file_out,'w') as f_out:
                 for line in f_in:
                     if line == '\n': continue
-                    f_out.write('<s> ' + self.exclude_POStag(line) + ' </s>\n')
+                    f_out.write(self.exclude_POStag(line) + '\n')
                     #break
 
 if __name__ == '__main__':
-    gs = GetSentences('./project2/data/postagged-files','pos','./raw/')
+    gs = GetSentences('./project2/data/postagged-files','pos','./raw-b/')
