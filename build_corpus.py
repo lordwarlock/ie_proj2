@@ -1,9 +1,14 @@
 import glob
 import re
-from nltk.tree import Tree
+from nltk.tree import ParentedTree
 class SentLine(object):
     def __init__(self,line):
-        self.tree = Tree.fromstring(line)
+        self.index=[]
+        def read_leaf(str):
+            leaf_node=ParentedTree(str,[])
+            self.index.append(leaf_node)
+            return leaf_node
+        self.tree = ParentedTree.fromstring(line,read_leaf=read_leaf)
 class PosLine(object):
     def __init__(self,line):
         token_poses = line.split()

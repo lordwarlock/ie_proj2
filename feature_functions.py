@@ -151,7 +151,21 @@ def alias(coref,corpus):
     return False
 
 def appositive(coref,corpus):
-    
+    if coref.first.sent == coref.second.sent:
+        line=corpus.sentence_data[coref.first.sent]
+        node1=line.index[corpus.coref.first.start]
+        nodes = []
+        while node1 != None and node1.label()[0]=='N' :
+            nodes.append(node1)
+            node1 = node1.parent()
+        node2 = line.index[corpus.coref.second.start]
+        while node2 != None and node2.label()[0]=='N' :
+            if node2 in nodes:
+                return True
+            node2 = node2.parent()
+    return False
+
+
 if __name__ == '__main__':
     from data_reader import *
     from feature_extraction import FeatureExtraction
