@@ -1,7 +1,7 @@
 APW20001209.0634.0301 NEWS STORY 2000-12-09 06:42:09 
 Recount-Bush 
 Bush Retreating After Court Setback 
-AUSTIN , Texas [AP ]  Gov . 
+AUSTIN , Texas [AP ] _ Gov . 
 George W. Bush is retreating to the solitude of his central Texas ranch after a stunning court setback in the long drawn-out presidential contest . 
 The Texas governor and Republican nominee was described as in good spirits , but disappointed after Friday 's Florida Supreme Court order for an immediate recount of so-called undervotes missed in machine tallies . 
 The dispirited Bush camp had hoped for a victory celebration in the streets of Austin this weekend . 
@@ -23,4 +23,4 @@ As to whether the trailing candidate should concede the race rather than prolong
 As news of Friday 's ruling spread , pro-Gore demonstrators began to congregate outside the governor 's mansion . 
 They were then matched by supporters of Bush and running mate Dick Cheney . 
 Car horns blared and at times competing demonstrators shouted at one another . 
-By nightfall , however , the demonstrators had all left and the mansion was quiet  even though the party was going on inside . 
+By nightfall , however , the demonstrators had all left and the mansion was quiet _ even though the party was going on inside . 

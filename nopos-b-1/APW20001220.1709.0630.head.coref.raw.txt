@@ -1,7 +1,7 @@
 ( (NP (NP (NNP APW20001220.1709.0630)) (NP (NNP NEWS) (NNP STORY)) (NP (QP (CD 2000-12-20) (CD 17:44:45)))) )
 ( (NP (NNP Wall-Street-Stocks)) )
 ( (NP (NP (NNP Big) (NNPS Movers)) (PP (IN in) (NP (DT the) (NNP Stock) (NNP Market)))) )
-( (S (NP (NNP NEW) (NNP YORK) (NNP [AP)) (VP (SYM ]) (NP (NP (NP (NNS Stocks)) (SBAR (WHNP (WDT that)) (S (VP (VBD were) (VP (VP (VBG moving) (ADVP (RB substantially))) (CC or) (VP (VBG trading) (ADVP (RB heavily)) (NP (NNP Wednesday)) (PP (IN on) (NP (DT the) (NNP New) (NNP York) (NNP Stock) (NNP Exchange))))))))) (CC and) (NP (DT the) (NNP Nasdaq) (NNP Stock) (NNP Market)))) (. .)) )
+( (X (NNP NEW) (NNP YORK) (NNP [AP) (X (SYM ])) (X (X (SYM _)) (NP (NP (NP (NNS Stocks)) (SBAR (WHNP (WDT that)) (S (VP (VBD were) (VP (VP (VBG moving) (ADVP (RB substantially))) (CC or) (VP (VBG trading) (ADVP (RB heavily)) (NP (NNP Wednesday)) (PP (IN on) (NP (DT the) (NNP New) (NNP York) (NNP Stock) (NNP Exchange))))))))) (CC and) (NP (DT the) (NNP Nasdaq) (NNP Stock) (NNP Market)))) (. .)) )
 ( (NP (NNP NYSE)) )
 ( (S (NP (NNP International) (NNP Paper) (NNP Co)) (VP (VBD .,) (ADVP (RB down) (NP (CD 69) (NNS cents)) (PP (IN at) (NP (CD $38.81)))))) )
 ( (S (NP (NNP International) (NNP Paper)) (PP (IN on) (NP (NNP Wednesday))) (VP (VBD warned) (SBAR (IN that) (S (NP (JJ fourth-quarter) (NNS earnings)) (VP (MD will) (VP (VB fall) (ADVP (RB short) (PP (IN of) (NP (NNS expectations))))))))) (. .)) )

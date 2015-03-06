@@ -14,7 +14,7 @@ Every shopper vaguely suspects that there is as much art as substance in the dif
 But luxury-goods companies guard no secret more ferociously than the cost of making their wares . 
 ``We are uncomfortable even with the question ,'' said Christina Kim , a spokeswoman for Hermes of Paris . 
 Still , it is possible to gain glimpses of enlightenment . 
-Public companies have to report gross margins  the money they take in after the costs of making their goods are deducted . 
+Public companies have to report gross margins _ the money they take in after the costs of making their goods are deducted . 
 For a luxury company like Gucci or Estee Lauder , that number usually runs in excess of 60 percent of total revenues . 
 That means the actual cost of making their stuff , from sweaters to thigh-high leather boots , is less than 40 percent of the average price tag . 
 [By contrast , gross margins at the Gap and other chain apparel stores rarely rise above 45 percent .] 

@@ -2,7 +2,7 @@
 ( (NP (NNP Lieberman)) )
 ( (NP (NNP Lieberman) (NNP Holds) (NNP Environment) (NNP Dear)) )
 ( (NP (NP (NNP WAUSAU)) (, ,) (NP (NNP Wis)) (. .)) )
-( (S (NP (NNP [AP) (SYM ]) (JJ Democratic) (NN vice) (JJ presidential) (NN candidate) (NNP Joseph) (NNP Lieberman)) (VP (VBD said) (NP (NNP Wednesday)) (SBAR (IN that) (S (PP (TO to) (NP (NP (PRP him)) (CC and) (NP (NNP Al) (NNP Gore)))) (, ,) (S (VP (VBG protecting) (NP (DT the) (NN environment)))) (VP (VBZ is) (NP (NP (JJ ``a) (NN matter)) (PP (IN of) (NP (NN faith) (NN .''))))))))) )
+( (FRAG (X (NNP [AP) (NNP ]) (X (SYM _)) (NP (JJ Democratic) (NN vice) (JJ presidential) (NN candidate) (NNP Joseph) (NNP Lieberman))) (VP (VBD said) (NP (NNP Wednesday)) (SBAR (IN that) (S (PP (TO to) (NP (NP (PRP him)) (CC and) (NP (NNP Al) (NNP Gore)))) (, ,) (S (VP (VBG protecting) (NP (DT the) (NN environment)))) (VP (VBZ is) (NP (NP (JJ ``a) (NN matter)) (PP (IN of) (NP (NN faith) (NN .''))))))))) )
 ( (S (NP (DT ``The) (NN environment)) (VP (VBZ is) (NP (NP (NP (DT the) (NN work)) (PP (IN of) (NP (NNP God) (SYM ,'') (NNP Lieberman)))) (VP (VBN told) (NP (QP (RB about) (CD 500)) (NNS people)) (PP (IN at) (NP (NNP Bluegill) (NNP Bay) (NNP Park)))))) (. .)) )
 ( (S (NP (NNP Lieberman)) (VP (VBD kept) (NP (DT the) (NN pressure)) (PP (IN on) (NP (NNP Texas) (NNP Gov)))) (. .)) )
 ( (S (NP (NP (NP (NNP George) (NNP W.) (NNP Bush) (POS 's)) (JJ environmental) (NN record)) (PP (IN with) (NP (NP (PRP$ his) (NN visit)) (PP (TO to) (NP (DT this) (NN battleground)))))) (VP (VBP state) (SBAR (NP (DT the) (NN day)) (IN after) (S (NP (NNP Gore) (CC and) (NNP Republican) (NNP Bush)) (VP (VBN tangled) (PP (IN in) (NP (PRP$ their) (ADJP (JJ third) (CC and) (JJ final)) (JJ presidential) (NN debate))))))) (. .)) )

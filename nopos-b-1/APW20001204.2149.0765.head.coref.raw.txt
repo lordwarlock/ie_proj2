@@ -2,7 +2,7 @@
 ( (NP (NNP FBC-Georgia-Donnan)) )
 ( (NP (NP (NNP Georgia) (NNP Fires)) (NP (NNP Coach) (NNP Jim) (NNP Donnan))) )
 ( (NP (NP (NNP ATHENS)) (, ,) (NP (NNP Ga)) (. .)) )
-( (S (NP (NNP [AP) (SYM ]) (NNP Georgia)) (VP (VBD fired) (NP (NN football) (NN coach) (NNP Jim) (NNP Donnan)) (NP (NNP Monday)) (SBAR (IN after) (S (NP (NP (DT a) (JJ disappointing) (JJ 7-4) (NN season)) (SBAR (WHNP (WDT that)) (S (VP (VBD started) (PP (IN with) (NP (DT the) (NNPS Bulldogs))))))) (VP (VBD ranked) (ADVP (RB No)))))) (. .)) )
+( (S (NP (NNP [AP) (SYM ]) (NNP _) (NNP Georgia)) (VP (VBD fired) (NP (NN football) (NN coach) (NNP Jim) (NNP Donnan)) (NP (NNP Monday)) (SBAR (IN after) (S (NP (NP (DT a) (JJ disappointing) (JJ 7-4) (NN season)) (SBAR (WHNP (WDT that)) (S (VP (VBD started) (PP (IN with) (NP (DT the) (NNPS Bulldogs))))))) (VP (VBD ranked) (ADVP (RB No)))))) (. .)) )
 ( (S (UCP (NP (CD 10)) (CC and) (VP (VBN picked) (S (VP (TO to) (VP (VB win) (NP (DT the) (NNP SEC)) (ADVP (RB East))))))) (, ,) (NP (PRP$ his) (NNS players)) (VP (VBD said)) (. .)) )
 ( (S (NP (NNP ``I)) (VP (VBD thought) (SBAR (S (NP (PRP he)) (VP (MD would) (VP (VB be) (PP (IN around) (NP (NP (DT another) (NN year)) (X (SYM ,'')))) (SBAR (SINV (VP (VBD said)) (NP (NP (NN quarterback) (NNP Cory) (NNP Phillips)) (, ,) (SBAR (WHNP (WP who)) (S (VP (VBD was) (PP (IN at) (NP (NP (DT a) (NN team) (NN meeting)) (SBAR (WHPP (IN at) (WHNP (WDT which))) (S (NP (NNP Donnan)) (VP (VBD told) (NP (DT the) (NN team)) (SBAR (S (NP (PRP he)) (VP (VBD had) (VP (VBN been) (VP (VBN dismisssed)))))))))))))))))))))) (. .)) )
 ( (S (NP (NNP ``I)) (VP (VBP 'm) (ADJP (NP (DT a) (JJ little) (NN bit)) (JJ shocked))) (. .)) )

@@ -16,7 +16,7 @@
 ( (S (S (ADVP (RB Elsewhere)) (, ,) (NP (NN fog)) (VP (VBD formed) (PP (IN in) (NP (NP (DT some) (JJ western) (NNS parts)) (PP (IN of) (NP (NNP Washington))))))) (, ,) (CC and) (S (NP (NNS showers)) (VP (VBD were) (VP (VBN expected) (S (VP (TO to) (VP (VB move) (PP (IN into) (NP (DT the) (NN region))) (PP (IN from) (NP (DT the) (NNP Pacific))))))))) (. .)) )
 ( (S (NP (NP (NP (NNP Monday) (POS 's)) (NNS temperatures)) (PP (IN around) (NP (DT the) (NNP Lower) (CD 48)))) (VP (VBD ranged) (PP (PP (IN from) (NP (NP (DT a) (NN morning) (NN low)) (PP (IN of) (NP (QP (CD 11) (IN below) (CD zero)))) (PP (IN at) (NP (NNP Phillips) (, ,) (NNP Wis.) (, ,))))) (PP (TO to) (NP (NP (NN midday) (NNS readings)) (PP (IN of) (NP (CD 77))) (PP (IN at) (NP (NP (NNP Oceanside)) (, ,) (NP (NP (NNP Calif)) (NP (SYM .,))) (CC and) (NP (NP (NNP Brownsville)) (, ,) (NP (NNP Texas))))))))) (. .)) )
 ( (S (NP (DT The) (JJS lowest) (NN wind) (NN chill)) (VP (VBD was) (NP (CD 58)) (ADVP (RB below)) (PP (IN at) (NP (NP (NNP Jamestown)) (, ,) (NP (NNP N.D))))) (. .)) )
-( (X (SYM )) )
+( (X (SYM ___)) )
 ( (PP (IN On) (NP (DT the) (NN Net)) (: :)) )
 ( (NP (NP (NNP National) (NNP Weather) (NNP Service)) (: :) (NP (NN http:))) )
 ( (NP (NP (NN Intellicast)) (: :) (NP (NN http:))) )

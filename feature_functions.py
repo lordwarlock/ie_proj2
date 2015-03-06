@@ -2,8 +2,8 @@ import re
 import inflect
 import gender_detector as gd
 def get_feature_functions():
-    return [appositive]
-    #return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree]
+    #return [appositive]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree,alias,appositive]
 
 
 #pronons = ['i', ]
@@ -12,8 +12,8 @@ def distance(coref,corpus):
     return coref.second.sent-coref.first.sent
 
 def definite(coref,corpus):
-    document = structure.document
-    second = structure.second
+    document = coref.document
+    second = coref.second
     if coref.second.word.lower().startswith('the_'):
         return True
     if (second.start == 0): return False
@@ -24,8 +24,8 @@ def definite(coref,corpus):
 def demonstrative(coref,corpus):
     if coref.second.word.lower() in ['this', 'that', 'those', 'these']:
         return True
-    document = structure.document
-    second = structure.second
+    document = coref.document
+    second = coref.second
     if (second.start == 0): return False
     if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0] in \
          ['this', 'that', 'those', 'these']):
@@ -155,11 +155,11 @@ def appositive(coref,corpus):
         line=corpus.sentence_data[coref.document][coref.first.sent]
         node1=line.index[coref.first.start].parent()
         nodes = []
-        while node1 != None and node1.label()[0]=='N' :
+        while node1 != None and node1.label() != '' and node1.label()[0]=='N' :
             nodes.append(node1)
             node1 = node1.parent()
         node2 = line.index[coref.second.start].parent()
-        while node2 != None and node2.label()[0]=='N' :
+        while node2 != None and node2.label() != '' and node2.label()[0]=='N' :
             if node2 in nodes:
                 return True
             node2 = node2.parent()

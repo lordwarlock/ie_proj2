@@ -11,7 +11,7 @@ class GetSentences(object):
             self.process_each_file(directory,self.out_dir)
             #break
     def exclude_POStag(self,line):
-        result = re.sub('_.*? ',' ',line[:-1])
+        result = re.sub('_[^_]*? ',' ',line[:-1])
         result = re.sub('\(','[',result)
         result = re.sub('\)',']',result)
         return result

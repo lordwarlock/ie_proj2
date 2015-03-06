@@ -1,7 +1,7 @@
 ( (NP (NP (NNP APW20001221.0431.0227)) (NP (NNP NEWS) (NNP STORY)) (NP (QP (CD 2000-12-21) (CD 05:47:41)))) )
 ( (NP (NNP Sandra-Bullock)) )
 ( (S (NP (NNP Bullock)) (VP (VBD Uninjured) (PP (IN in) (NP (NNP Plane) (NNP Mishap))))) )
-( (FRAG (INTJ (UH JACKSON)) (, ,) (NP (NNP Wyo.) (NNP [AP)) (X (SYM ])) (S (NP (NP (DT A) (NN plane)) (VP (VBG carrying) (NP (NP (NN actress) (NNP Sandra) (NNP Bullock)) (CC and) (NP (CD three) (JJ other) (NNS people))))) (VP (VP (VBD missed) (NP (DT a) (NN runway))) (CC and) (VP (VBD crashed) (PP (IN at) (NP (DT the) (NNP Jackson) (NNP Hole) (NNP Airport))) (NP (JJ early) (NNP Wednesday))))) (. .)) )
+( (S (INTJ (UH JACKSON)) (, ,) (X (NNP Wyo.) (NNP [AP) (X (SYM ])) (X (SYM _)) (NP (DT A) (NN plane) (NN carrying) (NN actress))) (NP (NP (NNP Sandra) (NNP Bullock)) (CC and) (NP (CD three) (JJ other) (NNS people))) (VP (VP (VBD missed) (NP (DT a) (NN runway))) (CC and) (VP (VBD crashed) (PP (IN at) (NP (DT the) (NNP Jackson) (NNP Hole) (NNP Airport))) (NP (JJ early) (NNP Wednesday)))) (. .)) )
 ( (S (NP (NNS Authorities)) (VP (VBD said) (SBAR (S (NP (DT no) (CD one)) (VP (VBD was) (VP (VBN hurt)))))) (. .)) )
 ( (S (S (NP (NP (NNP Bullock)) (, ,) (SBAR (WHNP (WP who)) (S (VP (VBZ stars) (PP (IN in) (NP (DT the) (JJ current) (NNP ``Miss) (NNP Congeniality))) (X (SYM ,'')))))) (VP (VBD was) (PP (IN aboard) (NP (NP (DT the) (NN plane)) (PP (IN with) (NP (NP (CD two) (NN crew) (NNS members)) (CC and) (NP (DT another) (NN person)))))))) (, ,) (NP (NN airport) (NN manager) (NNP George) (NNP Larson)) (VP (VBD said)) (. .)) )
 ( (S (NP (PRP He)) (VP (VBD said) (SBAR (S (NP (DT all)) (VP (VBD were) (VP (VBN uninjured)))))) (. .)) )

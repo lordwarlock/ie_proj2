@@ -4,7 +4,7 @@ BC-SIMPLE-COOKING-NYT
 PUDDING , SWEET AND NOT 
 &UR ; By MARK HULBERT &LR ; &QC ; &QL ; &UR ; c.2000 N.Y . 
 Times News Service &LR ; &QC ; &QL ; 
-NEW YORK  Bread pudding is one of the most traditional American dishes ; cookbooks from the 18th century have recipes for it that are more or less the same as what we make today . 
+NEW YORK _ Bread pudding is one of the most traditional American dishes ; cookbooks from the 18th century have recipes for it that are more or less the same as what we make today . 
 But bread pudding is also a minimalist sort of dish , no more than dry bread mixed together with milk and eggs and whatever flavor strikes the cook , and then baked until it is rich and custardy . 
 It can be savory or sweet , and either makes a simple , interesting substitute for a standard part of the Thanksgiving meal . 
 Savory bread pudding is a luxurious side dish that can be served in place of stuffing . 

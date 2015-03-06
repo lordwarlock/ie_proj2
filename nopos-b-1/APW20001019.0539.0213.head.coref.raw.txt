@@ -1,7 +1,7 @@
 ( (NP (NP (NNP APW20001019.0539.0213)) (NP (NNP NEWS) (NNP STORY)) (NP (QP (CD 2000-10-19) (CD 07:00:43)))) )
 ( (NP (NN CAR-F1-Malaysian-GP)) )
 ( (NP (NNP Schumacher) (NNP Looks) (NNP Ahead) (CC and) (NNP Behind)) )
-( (S (NP (NNP SEPANG) (, ,) (NNP Malaysia) (NNP [AP) (NN ]) (NNP Michael) (NNP Schumacher)) (VP (VBZ is) (ADVP (RB still)) (VP (VBG celebrating) (NP (NP (NNP Ferrari) (POS 's)) (JJ first) (NNP Formula) (CD One) (NN title)) (PP (IN since) (NP (CD 1979))))) (. .)) )
+( (S (NP (NP (NNP SEPANG)) (, ,) (X (NNP Malaysia) (NNP [AP) (X (SYM ])) (X (SYM _)) (NP (NNP Michael) (NNP Schumacher)))) (VP (VBZ is) (ADVP (RB still)) (VP (VBG celebrating) (NP (NP (NNP Ferrari) (POS 's)) (JJ first) (NNP Formula) (CD One) (NN title)) (PP (IN since) (NP (CD 1979))))) (. .)) )
 ( (S (NP (NNP ``It)) (VP (VBD was) (NP (NP (DT a) (JJ great) (NN relief)) (VP (VBG crossing) (SBAR (S (NP (NP (DT the) (NN line)) (PP (IN at) (NP (NNP Suzuka) (SYM ,'') (NNP Schumacher)))) (VP (VBD said) (PP (IN of) (NP (DT the) (NNP Oct))))))))) (. .)) )
 ( (NP (CD 8) (JJ Japanese) (NNP Grand) (NNP Prix) (. .)) )
 ( (S (NP (NNP ``There)) (VP (VBZ has) (VP (VBN been) (NP (NP (DT a) (NN couple)) (PP (IN of) (NP (NP (NP (NNS tons)) (PP (IN of) (NP (NN stone)))) (VP (VBG falling) (ADVP (RB away)))))))) (. .)) )
