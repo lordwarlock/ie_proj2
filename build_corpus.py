@@ -21,7 +21,7 @@ class BuildCorpus(object):
         self.sentence_data = dict()
         self.corpus = None
         self.build_postagged_data()
-        #self.build_sentence_data()
+        self.build_sentence_data()
 
     def build_postagged_data(self,directory='./postagged-files'):
         pos_files = glob.glob(directory+'/*.pos')
@@ -36,7 +36,7 @@ class BuildCorpus(object):
                     lines.append(PosLine(line))
                 self.postagged_data[data_name] = lines
 
-    def build_sentence_data(self,directory='./nopos'):
+    def build_sentence_data(self,directory='./nopos-b'):
         sentence_files = glob.glob(directory+'/*.txt')
         for sentence_file in sentence_files:
             with open(sentence_file,'r') as f_sent:

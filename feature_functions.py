@@ -2,7 +2,8 @@ import re
 import inflect
 import gender_detector as gd
 def get_feature_functions():
-    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree]
+    return [appositive]
+    #return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree]
 
 
 #pronons = ['i', ]
@@ -11,11 +12,26 @@ def distance(coref,corpus):
     return coref.second.sent-coref.first.sent
 
 def definite(coref,corpus):
-    return coref.second.word.lower().startswith('the_')
-
+    document = structure.document
+    second = structure.second
+    if coref.second.word.lower().startswith('the_'):
+        return True
+    if (second.start == 0): return False
+    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0] == 'the'):
+        return True
+    return False
 
 def demonstrative(coref,corpus):
-    return coref.second.word.lower() in ['this', 'that', 'those', 'these']
+    if coref.second.word.lower() in ['this', 'that', 'those', 'these']:
+        return True
+    document = structure.document
+    second = structure.second
+    if (second.start == 0): return False
+    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0] in \
+         ['this', 'that', 'those', 'these']):
+        return True
+    return False
+    
 
 def str_match(coref,corpus):
     return coref.first.word == coref.second.word
@@ -134,6 +150,8 @@ def alias(coref,corpus):
             return True
     return False
 
+def appositive(coref,corpus):
+    
 if __name__ == '__main__':
     from data_reader import *
     from feature_extraction import FeatureExtraction
