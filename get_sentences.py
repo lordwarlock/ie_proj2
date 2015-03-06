@@ -11,7 +11,10 @@ class GetSentences(object):
             self.process_each_file(directory,self.out_dir)
             #break
     def exclude_POStag(self,line):
-        return re.sub('_.*? ',' ',line[:-1])
+        result = re.sub('_.*? ',' ',line[:-1])
+        result = re.sub('\(','[',result)
+        result = re.sub('\)',']',result)
+        return result
 
     def process_each_file(self,dir_in,dir_out):
         in_match = re.match('.*/(.*?)\.'+self.extension,dir_in)
@@ -25,4 +28,4 @@ class GetSentences(object):
                     #break
 
 if __name__ == '__main__':
-    gs = GetSentences('./project2/data/postagged-files','pos','./raw-b/')
+    gs = GetSentences('./project2/data/postagged-files','pos','./raw-b-1/')
