@@ -41,11 +41,11 @@ class BuildCorpus(object):
                     lines.append(PosLine(line))
                 self.postagged_data[data_name] = lines
 
-    def build_sentence_data(self,directory='./nopos-b'):
+    def build_sentence_data(self,directory='./nopos-b-1'):
         sentence_files = glob.glob(directory+'/*.txt')
         for sentence_file in sentence_files:
             with open(sentence_file,'r') as f_sent:
-                match = re.match('.*/(.*?)\.head\.coref\.raw\.txt',sentence_file)
+                match = re.match(r'.*[/|\\](.*?)\.head\.coref\.raw\.txt',sentence_file)
                 data_name = match.group(1)
                 lines = []
                 for line in f_sent:

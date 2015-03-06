@@ -152,13 +152,13 @@ def alias(coref,corpus):
 
 def appositive(coref,corpus):
     if coref.first.sent == coref.second.sent:
-        line=corpus.sentence_data[coref.first.sent]
-        node1=line.index[corpus.coref.first.start]
+        line=corpus.sentence_data[coref.document][coref.first.sent]
+        node1=line.index[coref.first.start].parent()
         nodes = []
         while node1 != None and node1.label()[0]=='N' :
             nodes.append(node1)
             node1 = node1.parent()
-        node2 = line.index[corpus.coref.second.start]
+        node2 = line.index[coref.second.start].parent()
         while node2 != None and node2.label()[0]=='N' :
             if node2 in nodes:
                 return True
@@ -171,4 +171,4 @@ if __name__ == '__main__':
     from feature_extraction import FeatureExtraction
     from build_corpus import BuildCorpus
     f_ex=FeatureExtraction(BuildCorpus())
-    f_ex.test(DataSet(r"./project2/data/coref-trainset.gold"),number_agree)
+    f_ex.test(DataSet(r"./project2/data/coref-trainset.gold"),appositive)
