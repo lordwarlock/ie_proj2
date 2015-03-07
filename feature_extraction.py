@@ -63,6 +63,8 @@ class FeatureExtraction(object):
 @ATTRIBUTE definite	{True,False}
 @ATTRIBUTE sub_str	{True,False}
 @ATTRIBUTE ne_match	{True,False}
+@ATTRIBUTE appositive	{True,False}
+@ATTRIBUTE alias	{True,False}
 @ATTRIBUTE str_match	{True,False}
 @ATTRIBUTE number_agree	{True,False,None}
 @ATTRIBUTE capital_i_j	{0,1,2}
