@@ -71,6 +71,8 @@ class FeatureExtraction(object):
 @ATTRIBUTE prp_str_match	{True,False}
 @ATTRIBUTE pronoun_2	{True,False}
 @ATTRIBUTE pronoun_1	{True,False}
+@ATTRIBUTE who_hint	{True,False}
+@ATTRIBUTE is_hint	{True,False}
 @ATTRIBUTE class 	{yes, no}
 
 @DATA

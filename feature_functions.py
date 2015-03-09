@@ -2,8 +2,8 @@ import re
 import inflect
 import gender_detector as gd
 def get_feature_functions():
-    #return [appositive]
-    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1,pronoun_2,capital_i_j,both_pronoun,gender_agree,number_agree,alias,appositive]
+    #return [hint_word_detection,hint_who_detection]
+    return [distance,definite,demonstrative,str_match,sub_str,pro_str_match,ne_match,pronoun_1_v01,pronoun_2_v01,capital_i_j,both_pronoun,gender_agree,number_agree,alias,appositive,hint_word_detection,hint_who_detection]
 
 
 #pronons = ['i', ]
@@ -17,7 +17,7 @@ def definite(coref,corpus):
     if coref.second.word.lower().startswith('the_'):
         return True
     if (second.start == 0): return False
-    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0] == 'the'):
+    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0].lower() == 'the'):
         return True
     return False
 
@@ -27,21 +27,21 @@ def demonstrative(coref,corpus):
     document = coref.document
     second = coref.second
     if (second.start == 0): return False
-    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0] in \
+    if (corpus.postagged_data[document][second.sent].tokens[second.start - 1][0].lower() in \
          ['this', 'that', 'those', 'these']):
         return True
     return False
     
 
 def str_match(coref,corpus):
-    return coref.first.word == coref.second.word
+    return coref.first.word.lower() == coref.second.word.lower()
 
 
 
 def sub_str(structure,corpus):
-    if structure.first.word in structure.second.word:
+    if structure.first.word.lower() in structure.second.word.lower():
         return True
-    elif structure.second.word in structure.first.word:
+    elif structure.second.word.lower() in structure.first.word.lower():
         return True
     else:
         return False
@@ -70,11 +70,29 @@ def pronoun_1(structure,corpus):
     second = structure.second
     return corpus.postagged_data[document][first.sent].tokens[first.start:first.end][0][1]=='PRP'
 
+def pronoun_1_v01(structure,corpus):
+    document = structure.document
+    first = structure.first
+    second = structure.second
+    tags = [ token_tuple[1] for token_tuple in\
+        corpus.postagged_data[document][first.sent].tokens[first.start:first.end]]
+    if ('PRP' in tags): return True
+    else: return False
+
 def pronoun_2(structure,corpus):
     document = structure.document
     first = structure.first
     second = structure.second
     return corpus.postagged_data[document][second.sent].tokens[second.start:second.end][0][1]=='PRP'
+
+def pronoun_2_v01(structure,corpus):
+    document = structure.document
+    first = structure.first
+    second = structure.second
+    tags = [ token_tuple[1] for token_tuple in\
+        corpus.postagged_data[document][second.sent].tokens[second.start:second.end]]
+    if ('PRP' in tags): return True
+    else: return False
 
 def capital_i_j(structure,corpus):
     result = 2
@@ -165,7 +183,22 @@ def appositive(coref,corpus):
             node2 = node2.parent()
     return False
 
+def hint_word_detection(coref,corpus,token_distance = 3,hint_words = ['is','are','was','were','be']):
+    if(coref.first.sent != coref.second.sent): return False
+    if ((coref.second.start - coref.first.start) > token_distance): return False
+    between_word_list = []
+    document = coref.document
+    sentence = corpus.postagged_data[document][coref.first.sent].tokens
+    for i in range(coref.first.start,coref.second.end):
+        if (sentence[i][0] in hint_words):
+            print coref.first.word,coref.first.end, coref.second.word,coref.second.start
+            print sentence[coref.first.start:coref.second.end]
+            return True
 
+    return False
+        
+def hint_who_detection(coref,corpus):
+    return hint_word_detection(coref,corpus,hint_words = ['who','which'],token_distance=5)
 if __name__ == '__main__':
     from data_reader import *
     from feature_extraction import FeatureExtraction
